@@ -10,6 +10,8 @@
 - Single quotes, no semi
 - Auto fix for formatting (aimed to be used standalone without Prettier)
 - [Prefer let][prefer-let-url] (const is allowed at the top-level)
+- Node / Browser
+- es2022 / es2017-compat / es5-compat 
 
 [npm-badge]: https://img.shields.io/npm/v/eslint-config-fritx.svg
 [npm-url]: https://npmjs.org/package/eslint-config-fritx
@@ -29,11 +31,29 @@ npm i -g @antfu/ni  # `ni` is recommended
 ni -D eslint eslint-config-fritx
 ```
 
-### Config .eslintrc
+### Config .eslintrc.cjs
 
 ```js
-{
-  "extends": "fritx"
+module.exports = {
+  extends: ['fritx', 'fritx/node'],
+  // or es2017 for better compatibility
+  extends: ['fritx', 'fritx/node', 'fritx/es2017-compat'],
+
+  // or for front-end projects
+  extends: ['fritx', 'fritx/browser'],
+
+  // or for some really old projects
+  // need to execute `ni -D eslint-plugin-es5` first
+  extends: ['fritx', 'fritx/browser', 'fritx/es5-compat'],
+  // also linting third-party libraries with es5-compat
+  extends: ['fritx/browser', 'fritx/es5-compat'],
+  // for example:
+  overrides: [
+    {
+      files: 'vendor/**/*.js',
+      extends: ['fritx/browser', 'fritx/es5-compat'],
+    },
+    // ...
 }
 ```
 
