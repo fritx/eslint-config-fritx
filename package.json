@@ -7,6 +7,10 @@
     "url": "git+https://github.com/fritx/eslint-config-fritx.git"
   },
   "license": "MIT",
+  "scripts": {
+    "lint": "sort-package-json && eslint . --fix",
+    "release": "npm run lint && bumpp package.json --commit --push --tag && pnpm publish"
+  },
   "dependencies": {
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -15,7 +19,9 @@
     "eslint-plugin-promise": "^6.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.25.0"
+    "bumpp": "^8.2.1",
+    "eslint": "^8.25.0",
+    "sort-package-json": "^2.0.0"
   },
   "peerDependencies": {
     "eslint": "^8.25.0"
