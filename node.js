@@ -7,7 +7,7 @@ module.exports = {
     ecmaVersion: 2022
   },
   globals: {
-    // overrides eslint-config-standard
+    // overrides standard
     document: 'off',
     navigator: 'off',
     window: 'off',

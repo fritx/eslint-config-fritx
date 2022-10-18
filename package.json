@@ -21,6 +21,9 @@
   "devDependencies": {
     "bumpp": "^8.2.1",
     "eslint": "^8.25.0",
+    "eslint-plugin-es5": "^1.5.0",
+    "globals": "^13.17.0",
+    "lodash": "^4.17.21",
     "sort-package-json": "^2.0.0"
   },
   "peerDependencies": {

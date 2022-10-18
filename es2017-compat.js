@@ -1,5 +1,7 @@
 module.exports = {
-  parserOptions: {
-    ecmaVersion: 2017 // equivalent to `es8`
+  env: {
+    es2017: true, // equivalent to `es8`
+    // overrides standard
+    es2021: false,
   }
 }
