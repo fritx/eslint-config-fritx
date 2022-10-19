@@ -1,7 +1,6 @@
 /**
  * es5-loose mode
  * works better with auto-fix
- * requires `ni -D eslint-plugin-es5`
  */
 module.exports = {
   extends: './es5-compat',

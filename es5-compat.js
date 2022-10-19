@@ -1,11 +1,9 @@
 /**
  * es5-compat mode
- * requires `ni -D eslint-plugin-es5`
  */
 module.exports = {
   extends: [
-    'plugin:es5/no-es2015',
-    'plugin:es5/no-es2016'
+    'plugin:es/restrict-to-es5'
   ],
   env: {
     // overrides standard

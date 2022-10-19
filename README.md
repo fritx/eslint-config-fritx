@@ -43,7 +43,6 @@ module.exports = {
   extends: ['fritx', 'fritx/browser'],
 
   // or for some really old projects
-  // need to execute `ni -D eslint-plugin-es5` first
   extends: ['fritx', 'fritx/browser', 'fritx/es5-compat'],
   // also linting third-party libraries with es5-compat
   extends: ['fritx/browser', 'fritx/es5-compat'],
