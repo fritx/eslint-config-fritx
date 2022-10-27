@@ -2,12 +2,17 @@
  * es5-compat mode
  */
 module.exports = {
-  extends: [
-    'plugin:es/restrict-to-es5'
-  ],
+  extends: ['./', 'plugin:es/restrict-to-es5'],
   env: {
-    // overrides standard
-    es2021: false
+    // overrides
+    es6: false,
+    es2016: false,
+    es2017: false,
+    es2018: false,
+    es2019: false,
+    es2020: false,
+    es2021: false,
+    es2022: false,
   },
   parserOptions: {
     ecmaVersion: 5,

@@ -1,3 +1,9 @@
 module.exports = {
-  extends: ['./', './node']
+  extends: ['./'],
+  env: {
+    commonjs: true
+  },
+  ignorePatterns: [
+    'fixtures/**',
+  ],
 }

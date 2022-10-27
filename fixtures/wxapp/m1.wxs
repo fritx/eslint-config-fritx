@@ -1,0 +1,9 @@
+let a = "3333";
+
+var b = '2222'
+
+var c = "3333";
+
+let d = 1 && 2 || 3
+
+let e = new BigInt(3)
