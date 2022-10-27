@@ -1,4 +1,5 @@
 module.exports = {
+  extends: ['./'],
   env: {
     browser: false,
     node: true

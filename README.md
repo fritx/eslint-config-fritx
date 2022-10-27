@@ -6,12 +6,13 @@
 
 [![][standard-logo]](http://standardjs.com)
 
-- Extends [eslint-config-standard][eslint-standard-url]
+- ~~Extends [eslint-config-standard][eslint-standard-url]~~
+- [Standard][standard-url] like, super light-weight
 - Single quotes, no semi
 - Auto fix for formatting (aimed to be used standalone without Prettier)
 - [Prefer let][prefer-let-url] (const is allowed at the top-level)
-- Node / Browser
-- es2022 / es2017-compat / es5-compat 
+- Node / Browser / Wxapp / TypeScript
+- es2022 / es2018 / es5 / etc
 
 [npm-badge]: https://img.shields.io/npm/v/eslint-config-fritx.svg
 [npm-url]: https://npmjs.org/package/eslint-config-fritx
@@ -35,24 +36,35 @@ ni -D eslint eslint-config-fritx
 
 ```js
 module.exports = {
-  extends: ['fritx', 'fritx/node'],
+  extends: ['fritx/node'],
   // or es2017 for better compatibility
-  extends: ['fritx', 'fritx/node', 'fritx/es2017-compat'],
+  extends: ['fritx/node', 'fritx/es2018'],
 
   // or for front-end projects
-  extends: ['fritx', 'fritx/browser'],
+  extends: ['fritx/browser'],
 
   // or for some really old projects
-  extends: ['fritx', 'fritx/browser', 'fritx/es5-compat'],
-  // also linting third-party libraries with es5-compat
-  extends: ['fritx/browser', 'fritx/es5-compat'],
-  // for example:
+  extends: ['fritx/browser', 'fritx/es5-loose'],
+
+  // if you want to lint third-party libraries with es5
   overrides: [
     {
       files: 'vendor/**/*.js',
-      extends: ['fritx/browser', 'fritx/es5-compat'],
+      extends: ['plugin:es/restrict-to-es5'],
     },
     // ...
+
+  // typescript
+  // execute `ni -D typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+  extends: ['fritx/typescript'],
+  // wechat miniprogram
+  extends: ['fritx/wxapp'],
+  // both
+  extends: ['fritx/wxapp', 'fritx/typescript'],
+
+  // if you want more standard rules on besides
+  // execute `ni -D eslint-config-standard eslint-plugin-import eslint-plugin-n eslint-plugin-promise`
+  extends: ['fritx/standard-full'],
 }
 ```
 
