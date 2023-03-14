@@ -11,7 +11,7 @@
 - Single quotes, no semi
 - Auto fix for formatting (aimed to be used standalone without Prettier)
 - [Prefer let][prefer-let-url] (const is allowed at the top-level)
-- Node / Browser / Wxapp / TypeScript
+- Node / Browser / Wxapp / TypeScript / ESM
 - es2022 / es2018 / es5 / etc
 
 [npm-badge]: https://img.shields.io/npm/v/eslint-config-fritx.svg
@@ -89,6 +89,36 @@ module.exports = {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
+}
+```
+
+## If you are using ESM (ES Modules)
+
+```js
+// package.json
+{
+  "type": "module",
+  // ...
+}
+```
+
+```js
+// .eslintrc.cjs
+module.exports = {
+  extends: ['fritx/node', 'fritx/es2022', 'fritx/esm'],
+  // or
+  extends: ['fritx/browser', 'fritx/es2022', 'fritx/esm'],
+  // ...
+}
+```
+
+```js
+// .vscode/settings.json
+{
+  // Intellisense vs JavaScript Modules - lack of ".js" in completion #126171
+  // https://github.com/microsoft/vscode/issues/126171
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  // ...
 }
 ```
 

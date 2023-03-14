@@ -1,7 +1,7 @@
 module.exports = {
   overrides: [
     {
-      files: ['**/*.js', '**/*.cjs'],
+      files: ['**/*.js', '**/*.jsx', '**/*.cjs'],
       extends: [
         'eslint:recommended',
         './standard-lite',
