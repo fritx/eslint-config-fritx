@@ -10,6 +10,8 @@ module.exports = {
     'quotes': [2, 'single'],
     // space
     'keyword-spacing': 2,
+    'arrow-spacing': 2,
+    'block-spacing': 2,
     'space-before-blocks': [2, 'always'],
     'space-in-parens': [2, 'never'],
     'space-infix-ops': 2,
